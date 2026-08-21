@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osteosarc-agent"
+version = "0.1.0"
+description = "筋骨智策 OsteoSarc-Agent —— 基于可计算循证指南与多智能体协同的骨质疏松肌少症全周期智能决策平台"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "OsteoSarc-Agent contributors" }]
+keywords = [
+    "osteoporosis", "sarcopenia", "osteosarcopenia", "clinical decision support",
+    "computable guidelines", "multi-agent", "geriatrics", "TCM",
+]
+
+# No runtime dependencies. A hospital deployment should not need a package index
+# to start, and the corpus ships as JSON precisely so PyYAML stays optional.
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6"]   # only needed to author corpus files in YAML instead of JSON
+test = ["pytest>=8"]   # the suite is stdlib unittest; pytest runs it unchanged
+
+[project.scripts]
+osteosarc-agent = "osteosarc_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["osteosarc_agent*"]
+
+# The corpus and the console page are runtime assets, not just source. An
+# installed wheel that omitted the library would still start — and would then
+# have nothing to reason with, which is the worst possible failure for a
+# decision-support tool.
+[tool.setuptools.package-data]
+osteosarc_agent = ["guidelines/library/*.json", "guidelines/library/*.yaml", "ui/static/*.html"]

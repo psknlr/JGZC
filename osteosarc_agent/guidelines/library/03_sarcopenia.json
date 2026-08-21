@@ -1,0 +1,377 @@
+{
+  "_readme": "肌少症多标准语料：AWGS / EWGSOP2 / GLIS / ICFSR / 中国专家共识（编辑性转述）。",
+  "sources": [
+    {
+      "source_id": "APAC.AWGS.2019",
+      "title_zh": "亚洲肌少症工作组 2019 共识",
+      "title_en": "AWGS 2019 Consensus Update on Sarcopenia Diagnosis and Treatment",
+      "issuer": "Asian Working Group for Sarcopenia",
+      "year": 2019,
+      "region": "APAC",
+      "tradition": "sarcopenia",
+      "note": "亚洲人群切点；提出社区场景下的\"可能肌少症\"以便尽早干预"
+    },
+    {
+      "source_id": "EU.EWGSOP2.2019",
+      "title_zh": "欧洲老年人肌少症工作组第二版共识",
+      "title_en": "EWGSOP2: revised European consensus on definition and diagnosis",
+      "issuer": "European Working Group on Sarcopenia in Older People",
+      "year": 2019,
+      "region": "EU",
+      "tradition": "sarcopenia",
+      "note": "以肌力为首要判定要素，肌量用于确诊，躯体功能用于分级"
+    },
+    {
+      "source_id": "INTL.GLIS.2024",
+      "title_zh": "全球肌少症领导倡议概念框架",
+      "title_en": "Global Leadership Initiative in Sarcopenia (GLIS) conceptual definition",
+      "issuer": "GLIS",
+      "year": 2024,
+      "region": "INTL",
+      "tradition": "sarcopenia",
+      "note": "统一概念框架：以肌量减少为必备核心，切点与工具尚待各地操作化"
+    },
+    {
+      "source_id": "INTL.ICFSR.2021",
+      "title_zh": "肌少症临床实践指南",
+      "title_en": "ICFSR International Clinical Practice Guidelines for Sarcopenia",
+      "issuer": "International Conference on Frailty and Sarcopenia Research",
+      "year": 2021,
+      "region": "INTL",
+      "tradition": "sarcopenia"
+    },
+    {
+      "source_id": "CN.SARCO.2021",
+      "title_zh": "中国老年人肌少症诊疗专家共识",
+      "issuer": "中华医学会老年医学分会",
+      "year": 2021,
+      "region": "CN",
+      "tradition": "sarcopenia"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "APAC.AWGS.2019.CRITERIA",
+      "source_id": "APAC.AWGS.2019",
+      "topic": "diagnosis",
+      "question": "q.sarco.diagnosis_criteria",
+      "action": "diagnose_sarcopenia_awgs",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "AWGS 2019：握力男 <28 kg、女 <18 kg 为肌力下降；6 米步速 <1.0 m/s、5 次起坐 ≥12 s 或 SPPB ≤9 为躯体功能下降；ASMI（DXA）男 <7.0、女 <5.4 kg/m² 为肌量减少。肌量减少 + 肌力下降或功能下降即诊断肌少症；三者俱全为严重肌少症。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 60
+      },
+      "citation": "AWGS 2019，诊断流程与切点",
+      "tags": [
+        "诊断",
+        "肌少症",
+        "亚洲切点"
+      ]
+    },
+    {
+      "rec_id": "APAC.AWGS.2019.POSSIBLE_SARCOPENIA",
+      "source_id": "APAC.AWGS.2019",
+      "topic": "diagnosis",
+      "question": "q.sarco.mass_required",
+      "action": "act_on_possible_sarcopenia_without_mass",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "社区与基层场景下，仅有肌力下降或躯体功能下降即可判定为\"可能肌少症\"，应当立即启动生活方式干预，不必等待肌量测定。",
+      "applies_when": {
+        "all": [
+          {
+            "any": [
+              {
+                "fact": "low_muscle_strength",
+                "op": "is_true"
+              },
+              {
+                "fact": "low_physical_performance",
+                "op": "is_true"
+              }
+            ]
+          },
+          {
+            "fact": "muscle_mass_measured",
+            "op": "is_false"
+          }
+        ]
+      },
+      "rationale": "把肌量测定作为干预的前置条件，会让最需要运动与营养干预的老人卡在设备可及性上。",
+      "citation": "AWGS 2019，可能肌少症与基层路径",
+      "tags": [
+        "诊断",
+        "可及性",
+        "争议"
+      ]
+    },
+    {
+      "rec_id": "APAC.AWGS.2019.CASE_FINDING",
+      "source_id": "APAC.AWGS.2019",
+      "topic": "screening",
+      "question": "q.sarco.case_finding",
+      "action": "sarcopenia_case_finding",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "对 60 岁以上人群用小腿围（男 <34 cm、女 <33 cm）、SARC-F ≥4 或 SARC-CalF ≥11 进行病例发现，阳性者进入肌力与功能测定。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 60
+      },
+      "citation": "AWGS 2019，病例发现",
+      "tags": [
+        "筛查"
+      ]
+    },
+    {
+      "rec_id": "EU.EWGSOP2.2019.CRITERIA",
+      "source_id": "EU.EWGSOP2.2019",
+      "topic": "diagnosis",
+      "question": "q.sarco.diagnosis_criteria",
+      "action": "diagnose_sarcopenia_ewgsop2",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "EWGSOP2：握力男 <27 kg、女 <16 kg，或 5 次起坐 >15 s 为肌力下降（可能肌少症）；ASM 男 <20 kg、女 <15 kg 或 ASMI 男 <7.0、女 <5.5 kg/m² 确诊；步速 ≤0.8 m/s、SPPB ≤8 或 TUG ≥20 s 判为严重。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 60
+      },
+      "citation": "EWGSOP2 2019，定义与切点",
+      "tags": [
+        "诊断",
+        "肌少症",
+        "欧洲切点"
+      ]
+    },
+    {
+      "rec_id": "EU.EWGSOP2.2019.PROBABLE_TREAT",
+      "source_id": "EU.EWGSOP2.2019",
+      "topic": "diagnosis",
+      "question": "q.sarco.mass_required",
+      "action": "treat_probable_sarcopenia_before_confirmation",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "仅肌力下降即为\"可能肌少症\"，足以启动干预并查找病因；肌量测定用于确诊，不作为开始治疗的前提。",
+      "applies_when": {
+        "fact": "low_muscle_strength",
+        "op": "is_true"
+      },
+      "citation": "EWGSOP2 2019，诊断流程 F-A-C-S",
+      "tags": [
+        "诊断",
+        "干预时机"
+      ]
+    },
+    {
+      "rec_id": "INTL.GLIS.2024.MASS_MANDATORY",
+      "source_id": "INTL.GLIS.2024",
+      "topic": "diagnosis",
+      "question": "q.sarco.mass_required",
+      "action": "require_muscle_mass_for_diagnosis",
+      "direction": "require",
+      "strength": "consensus",
+      "statement_zh": "GLIS 概念框架把\"肌量减少\"作为肌少症的必备核心要素，肌力下降为支持要素，躯体功能下降视为结局与严重程度指标而非诊断要素；未测定肌量时不应作出肌少症的确定性诊断。",
+      "applies_when": {
+        "always": true
+      },
+      "rationale": "统一全球概念，避免\"无力即肌少\"把其他病因（疼痛、关节病、神经病变）纳入同一标签。",
+      "citation": "GLIS 2024 概念定义",
+      "tags": [
+        "诊断",
+        "全球框架",
+        "争议"
+      ]
+    },
+    {
+      "rec_id": "INTL.GLIS.2024.CUTOFF_PENDING",
+      "source_id": "INTL.GLIS.2024",
+      "topic": "diagnosis",
+      "question": "q.sarco.diagnosis_criteria",
+      "action": "diagnose_sarcopenia_glis",
+      "direction": "consider",
+      "strength": "consensus",
+      "statement_zh": "GLIS 尚未给出统一的测量工具与切点，落地时需声明所借用的区域切点；本系统在 GLIS 判定中沿用所选参考标准的肌量切点，并在结论中标注该借用。",
+      "applies_when": {
+        "always": true
+      },
+      "citation": "GLIS 2024，操作化说明",
+      "tags": [
+        "诊断",
+        "操作化",
+        "透明"
+      ]
+    },
+    {
+      "rec_id": "CN.SARCO.2021.MULTI_STANDARD",
+      "source_id": "CN.SARCO.2021",
+      "topic": "diagnosis",
+      "question": "q.sarco.diagnosis_criteria",
+      "action": "use_asian_cutoffs",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "中国老年人群建议采用 AWGS 亚洲切点；使用欧美切点会低估亚洲老年人的肌少症患病率，报告结论时应注明所用标准。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 60
+      },
+      "citation": "《中国老年人肌少症诊疗专家共识》诊断标准",
+      "tags": [
+        "诊断",
+        "人群差异"
+      ]
+    },
+    {
+      "rec_id": "INTL.ICFSR.2021.RESISTANCE_FIRST",
+      "source_id": "INTL.ICFSR.2021",
+      "topic": "exercise",
+      "question": "q.sarco.core_intervention",
+      "action": "resistance_training_program",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "强推荐/中等质量",
+      "statement_zh": "抗阻训练是肌少症唯一具有一致获益证据的核心干预，应作为所有肌少症患者的一线处方；建议每周至少 2～3 次、覆盖大肌群、渐进增加负荷。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "dx_sarcopenia_any",
+            "op": "is_true"
+          },
+          {
+            "fact": "dx_possible_sarcopenia",
+            "op": "is_true"
+          }
+        ]
+      },
+      "citation": "ICFSR 2021，运动干预",
+      "tags": [
+        "运动",
+        "抗阻训练",
+        "核心"
+      ]
+    },
+    {
+      "rec_id": "INTL.ICFSR.2021.NO_ROUTINE_DRUG",
+      "source_id": "INTL.ICFSR.2021",
+      "topic": "bone_protection",
+      "question": "q.sarco.pharmacotherapy",
+      "action": "avoid_routine_sarcopenia_drug",
+      "direction": "avoid",
+      "strength": "conditional",
+      "statement_zh": "目前不推荐为肌少症常规使用同化激素、生长激素等药物治疗；应把资源放在运动与营养干预及可逆病因的纠正上。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "dx_sarcopenia_any",
+            "op": "is_true"
+          },
+          {
+            "fact": "dx_possible_sarcopenia",
+            "op": "is_true"
+          }
+        ]
+      },
+      "citation": "ICFSR 2021，药物治疗",
+      "tags": [
+        "药物",
+        "不推荐"
+      ]
+    },
+    {
+      "rec_id": "CN.SARCO.2021.PROTEIN_EXERCISE",
+      "source_id": "CN.SARCO.2021",
+      "topic": "nutrition",
+      "question": "q.nutrition.protein_target",
+      "action": "protein_1_2_to_1_5",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "肌少症老年人建议每日蛋白质摄入 1.2～1.5 g/kg 体重，优质蛋白占一半以上并均匀分配到三餐，配合抗阻训练效果更佳。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "dx_sarcopenia_any",
+            "op": "is_true"
+          },
+          {
+            "fact": "dx_possible_sarcopenia",
+            "op": "is_true"
+          }
+        ]
+      },
+      "excluded_when": {
+        "fact": "egfr",
+        "op": "<",
+        "value": 30
+      },
+      "rationale": "单纯补蛋白而不训练，增加的是体重不是肌肉。",
+      "citation": "《中国老年人肌少症诊疗专家共识》营养干预",
+      "tags": [
+        "营养",
+        "蛋白质"
+      ],
+      "subsumes": [
+        "protein_at_least_1_0"
+      ]
+    },
+    {
+      "rec_id": "CN.SARCO.2021.VITD_MUSCLE",
+      "source_id": "CN.SARCO.2021",
+      "topic": "nutrition",
+      "question": "q.bone.vitamin_d_dose",
+      "action": "correct_vitamin_d_for_muscle",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "维生素 D 缺乏的肌少症老年人应予补充以改善肌力与平衡；已达标者继续大剂量补充不能带来额外肌肉获益。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "vitd_deficient",
+            "op": "is_true"
+          },
+          {
+            "fact": "vitd_insufficient",
+            "op": "is_true"
+          }
+        ]
+      },
+      "citation": "《中国老年人肌少症诊疗专家共识》营养干预",
+      "tags": [
+        "营养",
+        "维生素D",
+        "肌力"
+      ]
+    },
+    {
+      "rec_id": "INTL.ICFSR.2021.SCREEN_REVERSIBLE",
+      "source_id": "INTL.ICFSR.2021",
+      "topic": "diagnosis",
+      "question": "q.sarco.reversible_causes",
+      "action": "screen_reversible_causes",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "确认肌少症后须筛查可逆病因：营养不良、甲状腺功能异常、贫血、维生素 D 缺乏、慢性炎症、心衰、抑郁、疼痛与制动，以及导致乏力的药物。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "dx_sarcopenia_any",
+            "op": "is_true"
+          },
+          {
+            "fact": "dx_possible_sarcopenia",
+            "op": "is_true"
+          }
+        ]
+      },
+      "citation": "ICFSR 2021，病因评估",
+      "tags": [
+        "病因",
+        "可逆"
+      ]
+    }
+  ]
+}

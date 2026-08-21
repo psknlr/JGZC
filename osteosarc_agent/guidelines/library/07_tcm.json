@@ -1,0 +1,150 @@
+{
+  "_readme": "中医与中西医结合语料（编辑性转述）。本层不产生任何剂量，中药与中成药一律作为医师草案。",
+  "sources": [
+    {
+      "source_id": "CN.TCM.OP.2020",
+      "title_zh": "骨质疏松症中医诊疗指南",
+      "issuer": "中华中医药学会",
+      "year": 2020,
+      "region": "CN",
+      "tradition": "tcm"
+    },
+    {
+      "source_id": "CN.TCM.PATENT.2021",
+      "title_zh": "中成药治疗骨质疏松症临床应用指南（2021年）",
+      "issuer": "中华中医药学会 / 中国中药协会",
+      "year": 2021,
+      "region": "CN",
+      "tradition": "tcm"
+    },
+    {
+      "source_id": "CN.INTEGRATED.2023",
+      "title_zh": "骨质疏松症中西医结合诊疗专家共识",
+      "issuer": "中国中西医结合学会骨伤科专业委员会",
+      "year": 2023,
+      "region": "CN",
+      "tradition": "tcm"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "CN.TCM.OP.2020.KIDNEY_PATTERN",
+      "source_id": "CN.TCM.OP.2020",
+      "topic": "tcm",
+      "question": "q.tcm.pattern_treatment",
+      "action": "tonify_kidney_strengthen_bone",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "骨质疏松症以肾虚为本，肾精不足、骨失所养者治以补肾壮骨；偏肾阳虚者温补肾阳，偏肾阴虚者滋补肾阴。具体方药与剂量须由中医师四诊后拟定。",
+      "applies_when": {"any": [
+        {"fact": "tcm_kidney_deficiency", "op": "is_true"},
+        {"fact": "tcm_pattern", "op": "in", "value": ["肾阳虚", "肾阴虚", "肾精不足", "肝肾亏虚"]}
+      ]},
+      "citation": "《骨质疏松症中医诊疗指南》辨证论治",
+      "tags": ["中医", "辨证", "补肾"]
+    },
+    {
+      "rec_id": "CN.TCM.OP.2020.SPLEEN_PATTERN",
+      "source_id": "CN.TCM.OP.2020",
+      "topic": "tcm",
+      "question": "q.tcm.pattern_treatment",
+      "action": "strengthen_spleen_for_muscle",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "脾主肌肉四肢，脾虚失运则肌肉萎软无力；骨肌共病中见食少纳呆、倦怠乏力、肌肉瘦削者，治以健脾益气、培土生金，与营养干预协同。",
+      "applies_when": {"any": [
+        {"fact": "tcm_spleen_deficiency", "op": "is_true"},
+        {"all": [
+          {"fact": "dx_sarcopenia_any", "op": "is_true"},
+          {"fact": "appetite_loss", "op": "is_true"}
+        ]}
+      ]},
+      "rationale": "\"脾主肌肉\"与现代营养-肌肉轴在干预目标上高度重合，是中西医可对话的接口。",
+      "citation": "《骨质疏松症中医诊疗指南》辨证论治",
+      "tags": ["中医", "健脾", "肌少症"]
+    },
+    {
+      "rec_id": "CN.TCM.OP.2020.BLOOD_STASIS",
+      "source_id": "CN.TCM.OP.2020",
+      "topic": "tcm",
+      "question": "q.tcm.pattern_treatment",
+      "action": "activate_blood_resolve_stasis",
+      "direction": "consider",
+      "strength": "expert",
+      "statement_zh": "骨折后期或痛处固定不移、舌暗有瘀斑者，可在补肾健脾基础上佐以活血化瘀；合用抗凝或抗血小板药物时须评估出血风险。",
+      "applies_when": {"fact": "tcm_blood_stasis", "op": "is_true"},
+      "citation": "《骨质疏松症中医诊疗指南》辨证论治",
+      "tags": ["中医", "活血", "出血风险"]
+    },
+    {
+      "rec_id": "CN.TCM.PATENT.2021.ADJUNCT_ONLY",
+      "source_id": "CN.TCM.PATENT.2021",
+      "topic": "tcm",
+      "question": "q.tcm.role_vs_western_drug",
+      "action": "tcm_as_adjunct_not_replacement",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "中成药用于骨质疏松症以改善腰背疼痛、提高生活质量为主要目标，可与钙剂、维生素 D 及抗骨质疏松药物联用，但不能替代具有明确抗骨折证据的抗骨质疏松药物。",
+      "applies_when": {"fact": "dx_osteoporosis", "op": "is_true"},
+      "rationale": "把中成药当作抗骨折治疗的替代，是中西医结合场景中最常见也最危险的误用。",
+      "citation": "《中成药治疗骨质疏松症临床应用指南（2021年）》定位",
+      "tags": ["中医", "定位", "不可替代"]
+    },
+    {
+      "rec_id": "CN.TCM.PATENT.2021.PAIN_RELIEF",
+      "source_id": "CN.TCM.PATENT.2021",
+      "topic": "tcm",
+      "question": "q.tcm.pain_management",
+      "action": "tcm_patent_for_bone_pain",
+      "direction": "consider",
+      "strength": "conditional",
+      "statement_zh": "以补肾壮骨类中成药辅助缓解骨质疏松性腰背疼痛，可作为镇痛方案的一部分，有助于减少非甾体抗炎药在老年人中的用量。具体品种与用法由中医师依证型选定。",
+      "applies_when": {"fact": "dx_osteoporosis", "op": "is_true"},
+      "rationale": "老年人减少 NSAIDs 暴露本身就是肾功能与消化道安全的获益。",
+      "citation": "《中成药治疗骨质疏松症临床应用指南（2021年）》疼痛",
+      "tags": ["中医", "镇痛", "减少NSAIDs"]
+    },
+    {
+      "rec_id": "CN.TCM.PATENT.2021.HEPATIC_MONITOR",
+      "source_id": "CN.TCM.PATENT.2021",
+      "topic": "medication_safety",
+      "question": "q.tcm.safety_monitoring",
+      "action": "monitor_liver_function_on_tcm",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "部分补肾壮骨类中成药（含淫羊藿、补骨脂等成分）有肝损伤报告，说明书已作相应修订：用药期间应监测肝功能，出现乏力、纳差、尿黄、皮肤巩膜黄染时立即停药就诊；肝功能异常者慎用。",
+      "applies_when": {"any": [
+        {"fact": "tcm_pattern", "op": "known"},
+        {"fact": "medication_classes", "op": "contains", "value": "tcm_patent"}
+      ]},
+      "citation": "《中成药治疗骨质疏松症临床应用指南（2021年）》安全性；国家药品不良反应监测通报",
+      "tags": ["中医", "安全", "肝功能"]
+    },
+    {
+      "rec_id": "CN.INTEGRATED.2023.EXERCISE_QIGONG",
+      "source_id": "CN.INTEGRATED.2023",
+      "topic": "exercise",
+      "question": "q.exercise.fall_prevention",
+      "action": "balance_and_functional_training",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "推荐将太极拳、八段锦、五禽戏等传统导引功法纳入骨质疏松与骨肌共病患者的长期运动方案，兼顾平衡、下肢力量与依从性。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 60},
+      "citation": "《骨质疏松症中西医结合诊疗专家共识》运动与导引",
+      "tags": ["中医", "导引", "平衡"]
+    },
+    {
+      "rec_id": "CN.INTEGRATED.2023.STAGED",
+      "source_id": "CN.INTEGRATED.2023",
+      "topic": "tcm",
+      "question": "q.tcm.role_vs_western_drug",
+      "action": "stage_based_integration",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "中西医结合应分期实施：急性骨折期以镇痛、制动与抗骨质疏松药物为主，中医以活血化瘀、接骨续筋佐之；恢复与稳定期以补肾健脾、导引功法与营养运动干预维持疗效。",
+      "applies_when": {"fact": "dx_osteoporosis", "op": "is_true"},
+      "citation": "《骨质疏松症中西医结合诊疗专家共识》分期治疗",
+      "tags": ["中医", "分期", "结合"]
+    }
+  ]
+}

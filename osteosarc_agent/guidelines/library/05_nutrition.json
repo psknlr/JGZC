@@ -1,0 +1,280 @@
+{
+  "_readme": "老年营养与蛋白质摄入语料（编辑性转述）。含肌少症与慢性肾病之间的真实分歧。",
+  "sources": [
+    {
+      "source_id": "EU.ESPEN.2022",
+      "title_zh": "老年医学临床营养与补液指南",
+      "title_en": "ESPEN guideline on clinical nutrition and hydration in geriatrics",
+      "issuer": "ESPEN",
+      "year": 2022,
+      "region": "EU",
+      "tradition": "nutrition"
+    },
+    {
+      "source_id": "INTL.PROTAGE.2013",
+      "title_zh": "老年人蛋白质摄入专家共识（PROT-AGE）",
+      "title_en": "Evidence-based recommendations for optimal dietary protein intake in older people",
+      "issuer": "PROT-AGE Study Group",
+      "year": 2013,
+      "region": "INTL",
+      "tradition": "nutrition"
+    },
+    {
+      "source_id": "INTL.KDIGO.2024",
+      "title_zh": "慢性肾脏病评估与管理临床实践指南（营养部分）",
+      "title_en": "KDIGO Clinical Practice Guideline for CKD (nutrition)",
+      "issuer": "KDIGO",
+      "year": 2024,
+      "region": "INTL",
+      "tradition": "nutrition",
+      "note": "非透析 CKD 的蛋白限制建议，与肌少症营养目标存在张力"
+    },
+    {
+      "source_id": "CN.DIET.2022",
+      "title_zh": "中国居民膳食指南（2022）老年人篇",
+      "issuer": "中国营养学会",
+      "year": 2022,
+      "region": "CN",
+      "tradition": "nutrition"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "EU.ESPEN.2022.SCREEN_MALNUTRITION",
+      "source_id": "EU.ESPEN.2022",
+      "topic": "nutrition",
+      "question": "q.nutrition.screening",
+      "action": "screen_malnutrition",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "所有老年人应使用经验证工具（如 MNA-SF）常规筛查营养不良风险，阳性者进入营养评定与个体化营养支持。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "citation": "ESPEN 老年营养指南，营养筛查",
+      "tags": [
+        "营养",
+        "筛查"
+      ]
+    },
+    {
+      "rec_id": "EU.ESPEN.2022.ENERGY",
+      "source_id": "EU.ESPEN.2022",
+      "topic": "nutrition",
+      "question": "q.nutrition.energy_target",
+      "action": "energy_target_30kcal",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "老年人能量目标一般按 30 kcal/kg/d 估算并按营养状态、活动量与耐受性个体化调整；能量不足时补充蛋白质无法转化为肌肉。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "citation": "ESPEN 老年营养指南，能量需求",
+      "tags": [
+        "营养",
+        "能量"
+      ]
+    },
+    {
+      "rec_id": "EU.ESPEN.2022.PROTEIN_MIN",
+      "source_id": "EU.ESPEN.2022",
+      "topic": "nutrition",
+      "question": "q.nutrition.protein_target",
+      "action": "protein_at_least_1_0",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "老年人每日蛋白质摄入至少 1.0 g/kg 体重，并根据营养状态、体力活动、疾病与耐受性个体化调整。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "citation": "ESPEN 老年营养指南，蛋白质",
+      "tags": [
+        "营养",
+        "蛋白质"
+      ]
+    },
+    {
+      "rec_id": "INTL.PROTAGE.2013.PROTEIN_ILLNESS",
+      "source_id": "INTL.PROTAGE.2013",
+      "topic": "nutrition",
+      "question": "q.nutrition.protein_target",
+      "action": "protein_1_2_to_1_5",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "健康老年人每日蛋白 1.0～1.2 g/kg；急慢性疾病状态或肌少症者提高至 1.2～1.5 g/kg，并配合运动；重度肾功能不全（eGFR <30）且未透析者需限制并由专科监督。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "excluded_when": {
+        "fact": "egfr",
+        "op": "<",
+        "value": 30
+      },
+      "rationale": "PROT-AGE 自身即把重度肾功能不全排除在高蛋白建议之外——这不是外部反对，是建议内部自带的边界。",
+      "citation": "PROT-AGE 2013，蛋白质摄入建议",
+      "tags": [
+        "营养",
+        "蛋白质",
+        "肾功能"
+      ],
+      "subsumes": [
+        "protein_at_least_1_0"
+      ]
+    },
+    {
+      "rec_id": "INTL.KDIGO.2024.PROTEIN_RESTRICTION",
+      "source_id": "INTL.KDIGO.2024",
+      "topic": "nutrition",
+      "question": "q.nutrition.protein_target",
+      "action": "restrict_protein_in_ckd",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "非透析的 CKD G3b–G5 成人建议在营养师监督下将蛋白摄入控制在 0.6～0.8 g/kg/d，以延缓肾功能进展；但对合并肌少症、营养不良或高龄衰弱者不应机械执行低蛋白目标。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 45
+          },
+          {
+            "fact": "egfr",
+            "op": ">=",
+            "value": 10
+          }
+        ]
+      },
+      "rationale": "两条建议指向相反方向，冲突必须显式呈现给医师，而不是由系统悄悄选一边。",
+      "citation": "KDIGO CKD 指南，蛋白质摄入",
+      "tags": [
+        "营养",
+        "蛋白质",
+        "CKD",
+        "争议"
+      ]
+    },
+    {
+      "rec_id": "INTL.KDIGO.2024.INDIVIDUALIZE_SARCOPENIA",
+      "source_id": "INTL.KDIGO.2024",
+      "topic": "nutrition",
+      "question": "q.nutrition.protein_ckd_sarcopenia",
+      "action": "nephrology_dietitian_comanagement",
+      "direction": "require",
+      "strength": "consensus",
+      "statement_zh": "CKD 合并肌少症或营养不良时，蛋白目标须由肾脏科与营养科共同确定并动态监测（体重、握力、白蛋白、eGFR、代谢性酸中毒），不得由单一学科单向设定。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 45
+          },
+          {
+            "any": [
+              {
+                "fact": "dx_sarcopenia_any",
+                "op": "is_true"
+              },
+              {
+                "fact": "dx_possible_sarcopenia",
+                "op": "is_true"
+              }
+            ]
+          }
+        ]
+      },
+      "citation": "KDIGO CKD 指南，营养个体化",
+      "tags": [
+        "营养",
+        "多学科",
+        "冲突消解"
+      ]
+    },
+    {
+      "rec_id": "CN.DIET.2022.PROTEIN_DISTRIBUTION",
+      "source_id": "CN.DIET.2022",
+      "topic": "nutrition",
+      "question": "q.nutrition.protein_distribution",
+      "action": "distribute_protein_across_meals",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "蛋白质应均匀分配到三餐（每餐 25～30 g 优质蛋白），优先动物性蛋白与大豆蛋白；集中在晚餐一次摄入不利于肌肉合成。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "citation": "《中国居民膳食指南（2022）》老年人篇",
+      "tags": [
+        "营养",
+        "蛋白质",
+        "分配"
+      ]
+    },
+    {
+      "rec_id": "CN.DIET.2022.DAIRY_CALCIUM",
+      "source_id": "CN.DIET.2022",
+      "topic": "nutrition",
+      "question": "q.bone.calcium_supplement_dose",
+      "action": "dietary_calcium_via_dairy",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "老年人每日应摄入 300～400 mL 奶或相当量奶制品，配合豆制品与深绿色蔬菜达到膳食钙目标；补充剂只补差额并分次服用（单次元素钙不超过 500 mg 以利吸收）。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "citation": "《中国居民膳食指南（2022）》老年人篇",
+      "tags": [
+        "营养",
+        "钙"
+      ]
+    },
+    {
+      "rec_id": "EU.ESPEN.2022.ORAL_SUPPLEMENT",
+      "source_id": "EU.ESPEN.2022",
+      "topic": "nutrition",
+      "question": "q.nutrition.oral_supplement",
+      "action": "oral_nutritional_supplement",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "营养不良或有营养不良风险的老年人，在膳食强化仍不能达标时应给予口服营养补充（ONS），并明确随访达标情况。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "mna_sf",
+            "op": "<=",
+            "value": 11
+          },
+          {
+            "fact": "weight_loss_3m_pct",
+            "op": ">=",
+            "value": 5
+          },
+          {
+            "fact": "nutrition_risk_tier",
+            "op": "in",
+            "value": [
+              "high",
+              "very_high"
+            ]
+          }
+        ]
+      },
+      "citation": "ESPEN 老年营养指南，口服营养补充",
+      "tags": [
+        "营养",
+        "ONS"
+      ]
+    }
+  ]
+}

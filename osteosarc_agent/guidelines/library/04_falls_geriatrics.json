@@ -1,0 +1,230 @@
+{
+  "_readme": "跌倒与老年用药安全语料（编辑性转述）。",
+  "sources": [
+    {
+      "source_id": "INTL.WFG.2022",
+      "title_zh": "世界跌倒指南",
+      "title_en": "World Guidelines for Falls Prevention and Management in Older Adults",
+      "issuer": "World Falls Guidelines Task Force",
+      "year": 2022,
+      "region": "INTL",
+      "tradition": "geriatrics"
+    },
+    {
+      "source_id": "US.BEERS.2023",
+      "title_zh": "老年人潜在不适当用药 Beers 标准",
+      "title_en": "AGS Beers Criteria for Potentially Inappropriate Medication Use",
+      "issuer": "American Geriatrics Society",
+      "year": 2023,
+      "region": "US",
+      "tradition": "pharmacy"
+    },
+    {
+      "source_id": "EU.STOPP.2023",
+      "title_zh": "STOPP/START 老年人处方筛查标准第三版",
+      "title_en": "STOPP/START criteria version 3",
+      "issuer": "European Geriatric Medicine Society",
+      "year": 2023,
+      "region": "EU",
+      "tradition": "pharmacy"
+    },
+    {
+      "source_id": "CN.FALLS.2022",
+      "title_zh": "老年人跌倒风险评估与干预中国专家共识",
+      "issuer": "中华医学会老年医学分会",
+      "year": 2022,
+      "region": "CN",
+      "tradition": "geriatrics"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "INTL.WFG.2022.STRATIFY",
+      "source_id": "INTL.WFG.2022",
+      "topic": "falls",
+      "question": "q.falls.stratification",
+      "action": "stratify_fall_risk",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "所有 65 岁以上老人每年至少询问一次跌倒史、平衡与步态问题；有跌倒致伤、反复跌倒、步态或平衡障碍者列为高风险，直接进入多因素评估。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 65},
+      "citation": "World Falls Guidelines 2022，风险分层",
+      "tags": ["跌倒", "分层"]
+    },
+    {
+      "rec_id": "INTL.WFG.2022.MULTIFACTORIAL",
+      "source_id": "INTL.WFG.2022",
+      "topic": "falls",
+      "question": "q.falls.multifactorial_intervention",
+      "action": "multifactorial_fall_intervention",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "强推荐",
+      "statement_zh": "高跌倒风险者应接受多因素评估与干预：步态平衡训练、用药重整、体位性低血压与视力评估、足部与鞋具、居家环境改造、骨健康评估。单一措施效果有限。",
+      "applies_when": {"any": [
+        {"fact": "high_fall_risk", "op": "is_true"},
+        {"fact": "falls_12m", "op": ">=", "value": 2},
+        {"fact": "fall_with_injury", "op": "is_true"}
+      ]},
+      "citation": "World Falls Guidelines 2022，多因素干预",
+      "tags": ["跌倒", "多因素"]
+    },
+    {
+      "rec_id": "INTL.WFG.2022.EXERCISE_BALANCE",
+      "source_id": "INTL.WFG.2022",
+      "topic": "exercise",
+      "question": "q.exercise.fall_prevention",
+      "action": "balance_and_functional_training",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "高质量证据",
+      "statement_zh": "以挑战性平衡与功能性训练为主的运动方案可降低跌倒发生率，建议每周至少 3 次、长期坚持；太极拳等中低强度平衡训练同样有效。",
+      "applies_when": {"any": [
+        {"fact": "high_fall_risk", "op": "is_true"},
+        {"fact": "falls_12m", "op": ">=", "value": 1},
+        {"fact": "age", "op": ">=", "value": 70}
+      ]},
+      "citation": "World Falls Guidelines 2022，运动干预",
+      "tags": ["跌倒", "运动", "太极"]
+    },
+    {
+      "rec_id": "INTL.WFG.2022.NO_HIGH_DOSE_VITD",
+      "source_id": "INTL.WFG.2022",
+      "topic": "falls",
+      "question": "q.bone.vitamin_d_dose",
+      "action": "avoid_high_dose_bolus_vitamin_d",
+      "direction": "avoid",
+      "strength": "strong",
+      "statement_zh": "不建议为预防跌倒而使用大剂量间断（月度或年度）维生素 D；此类给药方案在试验中与跌倒和骨折增加相关。缺乏者按常规剂量补足即可。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 65},
+      "citation": "World Falls Guidelines 2022，维生素 D",
+      "tags": ["跌倒", "维生素D", "剂量"]
+    },
+    {
+      "rec_id": "INTL.WFG.2022.MED_REVIEW",
+      "source_id": "INTL.WFG.2022",
+      "topic": "medication_safety",
+      "question": "q.falls.frid_deprescribing",
+      "action": "deprescribe_fall_risk_drugs",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "对高跌倒风险者应系统评估并逐步减停增加跌倒风险的药物（镇静催眠药、苯二氮䓬类、抗胆碱能药、抗精神病药、部分降压药与阿片类），减停需有计划、渐进并随访。",
+      "applies_when": {"any": [
+        {"fact": "high_fall_risk", "op": "is_true"},
+        {"fact": "frid_count", "op": ">=", "value": 1}
+      ]},
+      "rationale": "这是跌倒危险因素中最可逆、也最常被忽略的一项。",
+      "citation": "World Falls Guidelines 2022，用药重整",
+      "tags": ["跌倒", "减药", "可逆"]
+    },
+    {
+      "rec_id": "US.BEERS.2023.BENZO_AVOID",
+      "source_id": "US.BEERS.2023",
+      "topic": "medication_safety",
+      "question": "q.falls.frid_deprescribing",
+      "action": "avoid_benzodiazepines_and_z_drugs",
+      "direction": "avoid",
+      "strength": "strong",
+      "statement_zh": "65 岁以上应避免使用苯二氮䓬类与非苯二氮䓬类催眠药（Z 类），二者显著增加认知损害、跌倒与骨折风险，且与骨质疏松人群的骨折负担叠加。",
+      "applies_when": {"all": [
+        {"fact": "age", "op": ">=", "value": 65},
+        {"fact": "medication_classes", "op": "any_in", "value": ["benzodiazepine", "z_drug"]}
+      ]},
+      "citation": "AGS Beers Criteria 2023，中枢神经系统药物",
+      "tags": ["用药安全", "跌倒", "Beers"]
+    },
+    {
+      "rec_id": "US.BEERS.2023.ANTICHOLINERGIC",
+      "source_id": "US.BEERS.2023",
+      "topic": "medication_safety",
+      "question": "q.falls.frid_deprescribing",
+      "action": "reduce_anticholinergic_burden",
+      "direction": "avoid",
+      "strength": "strong",
+      "statement_zh": "应尽量避免强抗胆碱能药物（部分抗组胺药、三环类抗抑郁药、解痉药、膀胱过度活动症用药），其累积负荷与跌倒、谵妄和认知下降相关。",
+      "applies_when": {"all": [
+        {"fact": "age", "op": ">=", "value": 65},
+        {"fact": "medication_classes", "op": "contains", "value": "anticholinergic"}
+      ]},
+      "citation": "AGS Beers Criteria 2023，抗胆碱能负荷",
+      "tags": ["用药安全", "抗胆碱能"]
+    },
+    {
+      "rec_id": "US.BEERS.2023.PPI_LONG_TERM",
+      "source_id": "US.BEERS.2023",
+      "topic": "medication_safety",
+      "question": "q.pharm.ppi_long_term",
+      "action": "review_long_term_ppi",
+      "direction": "avoid",
+      "strength": "conditional",
+      "statement_zh": "无明确指征时避免质子泵抑制剂长期（>8 周）使用；长期使用与骨折风险升高及钙、镁、维生素 B12 吸收下降相关。",
+      "applies_when": {"fact": "medication_classes", "op": "contains", "value": "ppi"},
+      "citation": "AGS Beers Criteria 2023，胃肠道药物",
+      "tags": ["用药安全", "PPI", "骨折"]
+    },
+    {
+      "rec_id": "EU.STOPP.2023.START_BONE",
+      "source_id": "EU.STOPP.2023",
+      "topic": "bone_protection",
+      "question": "q.pharm.start_criteria_bone",
+      "action": "start_bone_therapy_when_indicated",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "START 标准：既往脆性骨折、长期糖皮质激素治疗或已诊断骨质疏松而未接受抗骨质疏松药物者，属于处方遗漏，应予纠正。",
+      "applies_when": {"all": [
+        {"any": [
+          {"fact": "prior_fragility_fracture", "op": "is_true"},
+          {"fact": "dx_osteoporosis", "op": "is_true"},
+          {"fact": "glucocorticoid_current", "op": "is_true"}
+        ]},
+        {"fact": "on_antiosteoporosis_therapy", "op": "is_false"}
+      ]},
+      "rationale": "处方遗漏与不适当处方同样是用药安全问题。",
+      "citation": "STOPP/START v3，START 骨骼系统",
+      "tags": ["用药安全", "处方遗漏"]
+    },
+    {
+      "rec_id": "EU.STOPP.2023.POLYPHARMACY",
+      "source_id": "EU.STOPP.2023",
+      "topic": "medication_safety",
+      "question": "q.pharm.polypharmacy_review",
+      "action": "structured_medication_review",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "同时使用 5 种及以上药物者应进行结构化用药重整，逐一核对适应证、疗程、相互作用与肾功能剂量调整。",
+      "applies_when": {"fact": "polypharmacy", "op": "is_true"},
+      "citation": "STOPP/START v3，多重用药",
+      "tags": ["用药安全", "多重用药"]
+    },
+    {
+      "rec_id": "CN.FALLS.2022.HOME_ENV",
+      "source_id": "CN.FALLS.2022",
+      "topic": "falls",
+      "question": "q.falls.home_environment",
+      "action": "home_hazard_modification",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "对有跌倒史或功能受限的老人应进行居家环境评估与改造：卫生间扶手与防滑垫、去除门槛与松动地毯、夜间照明、常用物品放置在易取高度、合脚防滑鞋。",
+      "applies_when": {"any": [
+        {"fact": "falls_12m", "op": ">=", "value": 1},
+        {"fact": "high_fall_risk", "op": "is_true"},
+        {"fact": "uses_walking_aid", "op": "is_true"}
+      ]},
+      "citation": "《老年人跌倒风险评估与干预中国专家共识》环境干预",
+      "tags": ["跌倒", "居家改造"]
+    },
+    {
+      "rec_id": "CN.FALLS.2022.ASSESS_TOOLS",
+      "source_id": "CN.FALLS.2022",
+      "topic": "falls",
+      "question": "q.falls.stratification",
+      "action": "use_functional_fall_tests",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "建议用起立-行走计时（TUG ≥12 s 提示异常）、5 次起坐、4 米步速与 Berg 平衡量表等客观测试量化跌倒风险，避免仅凭主诉判断。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 65},
+      "citation": "《老年人跌倒风险评估与干预中国专家共识》评估工具",
+      "tags": ["跌倒", "评估工具"]
+    }
+  ]
+}
