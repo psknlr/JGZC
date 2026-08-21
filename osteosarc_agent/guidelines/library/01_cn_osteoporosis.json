@@ -1,0 +1,560 @@
+{
+  "_readme": "中国骨质疏松相关指南/共识的可计算改写。statement_zh 为编辑性转述，非授权原文，见 docs/GUIDELINES.md。",
+  "sources": [
+    {
+      "source_id": "CN.OP.2022",
+      "title_zh": "原发性骨质疏松症诊疗指南（2022）",
+      "issuer": "中华医学会骨质疏松和骨矿盐疾病分会",
+      "year": 2022,
+      "region": "CN",
+      "tradition": "western",
+      "note": "国内原发性骨质疏松诊断、分层与药物治疗的主干文件"
+    },
+    {
+      "source_id": "CN.FRACTURE.2022",
+      "title_zh": "骨质疏松性骨折诊疗指南",
+      "issuer": "中华医学会骨科学分会骨质疏松学组",
+      "year": 2022,
+      "region": "CN",
+      "tradition": "western",
+      "note": "脆性骨折围手术期与二级预防"
+    },
+    {
+      "source_id": "CN.GERI.OP.2023",
+      "title_zh": "老年人骨质疏松症诊疗与管理专家共识",
+      "issuer": "中华医学会老年医学分会",
+      "year": 2023,
+      "region": "CN",
+      "tradition": "geriatrics",
+      "note": "强调老年共病、多重用药与功能结局"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "CN.OP.2022.DX_CLINICAL_FRACTURE",
+      "source_id": "CN.OP.2022",
+      "topic": "diagnosis",
+      "question": "q.dx.osteoporosis_criteria",
+      "action": "diagnose_osteoporosis_by_fragility_fracture",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "1A",
+      "statement_zh": "髋部或椎体发生脆性骨折者，无论骨密度如何均可临床诊断骨质疏松症；不应因骨密度未达 -2.5 而否定诊断或推迟治疗。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "fracture_sites",
+            "op": "any_in",
+            "value": [
+              "hip",
+              "vertebra",
+              "髋部",
+              "椎体"
+            ]
+          },
+          {
+            "fact": "morphometric_vertebral_fracture",
+            "op": "is_true"
+          }
+        ]
+      },
+      "rationale": "脆性骨折本身即骨强度不足的终点事件，等待骨密度是骨质疏松最常见的漏治原因。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》诊断与鉴别诊断",
+      "tags": [
+        "诊断",
+        "脆性骨折"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.DX_TSCORE",
+      "source_id": "CN.OP.2022",
+      "topic": "diagnosis",
+      "question": "q.dx.osteoporosis_criteria",
+      "action": "diagnose_osteoporosis_by_tscore",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "1A",
+      "statement_zh": "绝经后女性及 50 岁以上男性，腰椎、股骨颈或全髋 T 值 ≤ -2.5 诊断骨质疏松；-1.0 至 -2.5 为低骨量。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "tscore_min",
+            "op": "known"
+          },
+          {
+            "any": [
+              {
+                "fact": "postmenopausal",
+                "op": "is_true"
+              },
+              {
+                "all": [
+                  {
+                    "fact": "sex",
+                    "op": "==",
+                    "value": "M"
+                  },
+                  {
+                    "fact": "age",
+                    "op": ">=",
+                    "value": 50
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "rationale": "WHO 骨密度分级在国内指南中沿用，但仅适用于绝经后女性与 50 岁以上男性。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》骨密度测量与诊断标准",
+      "tags": [
+        "诊断",
+        "DXA"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.LUMBAR_OVERESTIMATE",
+      "source_id": "CN.OP.2022",
+      "topic": "diagnosis",
+      "question": "q.dx.dxa_interpretation",
+      "action": "prefer_hip_site_when_spine_degenerated",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "严重退变、椎体压缩骨折或腹主动脉钙化会使腰椎测值虚高，此时应以股骨颈或全髋 T 值为准。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "lumbar_tscore",
+            "op": "known"
+          },
+          {
+            "any": [
+              {
+                "fact": "morphometric_vertebral_fracture",
+                "op": "is_true"
+              },
+              {
+                "fact": "fracture_sites",
+                "op": "any_in",
+                "value": [
+                  "vertebra",
+                  "椎体"
+                ]
+              },
+              {
+                "fact": "age",
+                "op": ">=",
+                "value": 70
+              }
+            ]
+          }
+        ]
+      },
+      "rationale": "读值虚高会把一个应当治疗的患者判为低骨量。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》骨密度测量注意事项",
+      "tags": [
+        "诊断",
+        "DXA",
+        "陷阱"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.SCREEN_WOMEN65",
+      "source_id": "CN.OP.2022",
+      "topic": "screening",
+      "question": "q.screen.dxa_age",
+      "action": "dxa_screening",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "建议 65 岁以上女性、70 岁以上男性常规行 DXA 检查；伴危险因素者提前。",
+      "applies_when": {
+        "any": [
+          {
+            "all": [
+              {
+                "fact": "sex",
+                "op": "==",
+                "value": "F"
+              },
+              {
+                "fact": "age",
+                "op": ">=",
+                "value": 65
+              }
+            ]
+          },
+          {
+            "all": [
+              {
+                "fact": "sex",
+                "op": "==",
+                "value": "M"
+              },
+              {
+                "fact": "age",
+                "op": ">=",
+                "value": 70
+              }
+            ]
+          }
+        ]
+      },
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》筛查与危险因素评估",
+      "tags": [
+        "筛查"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.CALCIUM_VITD_BASE",
+      "source_id": "CN.OP.2022",
+      "topic": "bone_protection",
+      "question": "q.bone.calcium_vitd_baseline",
+      "action": "calcium_and_vitamin_d_supplementation",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "1A",
+      "statement_zh": "钙剂与维生素 D 是抗骨质疏松治疗的基础用药：50 岁以上人群每日元素钙 1000～1200 mg（膳食优先，不足部分补充），维生素 D 建议 800～1200 IU/d 并按 25-OH-D 水平调整。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "dx_osteoporosis",
+            "op": "is_true"
+          },
+          {
+            "fact": "dx_low_bone_mass",
+            "op": "is_true"
+          },
+          {
+            "fact": "age",
+            "op": ">=",
+            "value": 65
+          }
+        ]
+      },
+      "rationale": "基础用药不足会削弱一切抗骨吸收与促骨形成药物的疗效，并放大低钙风险。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》基础措施",
+      "tags": [
+        "基础用药",
+        "钙",
+        "维生素D"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.CORRECT_BEFORE_ANTIRESORPTIVE",
+      "source_id": "CN.OP.2022",
+      "topic": "medication_safety",
+      "question": "q.safety.correct_calcium_vitd_first",
+      "action": "correct_calcium_and_vitd_before_antiresorptive",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "启动地舒单抗、唑来膦酸等强效抗骨吸收治疗前，必须先纠正低钙血症与维生素 D 缺乏，并在用药期间保证钙与维 D 摄入。",
+      "applies_when": {
+        "always": true
+      },
+      "rationale": "顺序颠倒是抗骨吸收药物相关严重低钙血症最主要的可预防原因；肾功能不全者风险更高。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》药物治疗注意事项",
+      "tags": [
+        "安全",
+        "低钙",
+        "顺序"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.BISPHOSPHONATE_FIRST",
+      "source_id": "CN.OP.2022",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_high_risk",
+      "action": "start_bisphosphonate",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "1A",
+      "statement_zh": "多数骨质疏松患者初始治疗可选用双膦酸盐（口服阿仑膦酸钠或静脉唑来膦酸），其降低椎体与非椎体骨折风险证据充分、可及性好。",
+      "applies_when": {
+        "fact": "dx_osteoporosis",
+        "op": "is_true"
+      },
+      "excluded_when": {
+        "any": [
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 35
+          },
+          {
+            "fact": "hypocalcemia",
+            "op": "is_true"
+          }
+        ]
+      },
+      "rationale": "疗效证据与费用可及性共同决定了国内的一线地位。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》抗骨质疏松药物",
+      "tags": [
+        "药物",
+        "双膦酸盐"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.BISPHOSPHONATE_RENAL",
+      "source_id": "CN.OP.2022",
+      "topic": "medication_safety",
+      "question": "q.pharm.ckd_agent_choice",
+      "action": "avoid_bisphosphonate_in_low_egfr",
+      "direction": "avoid",
+      "strength": "strong",
+      "statement_zh": "eGFR 低于 35 mL/min/1.73m²（唑来膦酸）或 30～35 以下（口服双膦酸盐）时不推荐使用双膦酸盐。",
+      "applies_when": {
+        "fact": "egfr",
+        "op": "<",
+        "value": 35
+      },
+      "rationale": "双膦酸盐经肾排泄，肾功能不全时蓄积并可能加重肾损害。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》特殊人群用药",
+      "tags": [
+        "安全",
+        "肾功能",
+        "禁忌"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.DENOSUMAB_CKD",
+      "source_id": "CN.OP.2022",
+      "topic": "bone_protection",
+      "question": "q.pharm.ckd_agent_choice",
+      "action": "start_denosumab",
+      "direction": "consider",
+      "strength": "conditional",
+      "statement_zh": "地舒单抗不经肾脏清除，肾功能不全者可考虑使用，但低钙血症风险随肾功能下降而升高，需在充分补充钙与维生素 D 的前提下使用并密切监测血钙。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "dx_osteoporosis",
+            "op": "is_true"
+          },
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 35
+          }
+        ]
+      },
+      "excluded_when": {
+        "fact": "hypocalcemia",
+        "op": "is_true"
+      },
+      "rationale": "把肾功能不全患者的用药真空补上，同时把风险从肾脏转移到血钙，需要相应的监测计划。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》特殊人群用药",
+      "tags": [
+        "药物",
+        "地舒单抗",
+        "肾功能"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.DENOSUMAB_NO_STOP",
+      "source_id": "CN.OP.2022",
+      "topic": "medication_safety",
+      "question": "q.pharm.denosumab_discontinuation",
+      "action": "require_sequential_therapy_after_denosumab",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "地舒单抗不可自行停药或延迟给药；停用后骨转换反跳可致多发椎体骨折，任何停用计划必须预先安排双膦酸盐等序贯衔接。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "medication_classes",
+            "op": "contains",
+            "value": "denosumab"
+          },
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 35
+          }
+        ]
+      },
+      "rationale": "这是该药最重要的单条安全信息，必须写进任何涉及地舒单抗的方案。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》药物治疗疗程与停药",
+      "tags": [
+        "安全",
+        "地舒单抗",
+        "停药反跳"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.SEQUENTIAL_AFTER_ANABOLIC",
+      "source_id": "CN.OP.2022",
+      "topic": "bone_protection",
+      "question": "q.pharm.sequence_after_anabolic",
+      "action": "antiresorptive_after_anabolic",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "促骨形成药物疗程结束后必须序贯抗骨吸收药物，否则新增骨量迅速丢失。",
+      "applies_when": {
+        "fact": "medication_classes",
+        "op": "any_in",
+        "value": [
+          "teriparatide",
+          "romosozumab"
+        ]
+      },
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》序贯治疗",
+      "tags": [
+        "序贯",
+        "促骨形成"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.DXA_FOLLOWUP",
+      "source_id": "CN.OP.2022",
+      "topic": "monitoring",
+      "question": "q.monitor.dxa_interval",
+      "action": "repeat_dxa",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "抗骨质疏松治疗期间建议每 12 个月复查骨密度（同一台设备、同一部位），并同时随访骨转换标志物评估依从性与反应。",
+      "applies_when": {
+        "fact": "dx_osteoporosis",
+        "op": "is_true"
+      },
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》疗效监测",
+      "tags": [
+        "随访",
+        "DXA"
+      ]
+    },
+    {
+      "rec_id": "CN.FRACTURE.2022.SECONDARY_PREVENTION",
+      "source_id": "CN.FRACTURE.2022",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_high_risk",
+      "action": "start_antiosteoporosis_after_fragility_fracture",
+      "direction": "require",
+      "strength": "strong",
+      "evidence_level": "1A",
+      "statement_zh": "脆性骨折后必须启动抗骨质疏松药物治疗并纳入骨折联络服务（FLS）管理，不能只处理骨折本身。",
+      "applies_when": {
+        "fact": "prior_fragility_fracture",
+        "op": "is_true"
+      },
+      "rationale": "骨折后一年内再骨折风险最高（迫在眉睫的骨折风险），而现实中二级预防启动率极低。",
+      "citation": "《骨质疏松性骨折诊疗指南》二级预防",
+      "tags": [
+        "二级预防",
+        "FLS"
+      ]
+    },
+    {
+      "rec_id": "CN.FRACTURE.2022.IMMINENT_RISK",
+      "source_id": "CN.FRACTURE.2022",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_very_high_risk",
+      "action": "prefer_potent_agent_imminent_risk",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "近期（1 年内）发生脆性骨折者处于迫在眉睫的再骨折风险期，应优先选择起效快、抗骨折证据强的药物，并尽早启动。",
+      "applies_when": {
+        "fact": "fracture_within_12m",
+        "op": "is_true"
+      },
+      "citation": "《骨质疏松性骨折诊疗指南》再骨折风险",
+      "tags": [
+        "极高风险",
+        "序贯"
+      ]
+    },
+    {
+      "rec_id": "CN.GERI.OP.2023.COMPREHENSIVE",
+      "source_id": "CN.GERI.OP.2023",
+      "topic": "monitoring",
+      "question": "q.geri.comprehensive_assessment",
+      "action": "comprehensive_geriatric_assessment",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "老年骨质疏松患者应同时评估肌少症、跌倒风险、营养状态、认知与多重用药，单纯提升骨密度不能降低骨折发生。",
+      "applies_when": {
+        "fact": "age",
+        "op": ">=",
+        "value": 65
+      },
+      "rationale": "骨折 = 骨强度不足 × 跌倒；只处理前者是做了一半。",
+      "citation": "《老年人骨质疏松症诊疗与管理专家共识》综合评估",
+      "tags": [
+        "老年综合评估",
+        "骨肌共病"
+      ]
+    },
+    {
+      "rec_id": "CN.GERI.OP.2023.OSTEOSARCOPENIA",
+      "source_id": "CN.GERI.OP.2023",
+      "topic": "diagnosis",
+      "question": "q.dx.osteosarcopenia",
+      "action": "recognize_osteosarcopenia",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "骨质疏松与肌少症共存（骨肌共病）者跌倒、骨折、失能与死亡风险显著高于单一疾病，应作为一个整体管理目标而非两个平行诊断。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "dx_osteoporosis",
+            "op": "is_true"
+          },
+          {
+            "any": [
+              {
+                "fact": "dx_sarcopenia_any",
+                "op": "is_true"
+              },
+              {
+                "fact": "dx_possible_sarcopenia",
+                "op": "is_true"
+              }
+            ]
+          }
+        ]
+      },
+      "citation": "《老年人骨质疏松症诊疗与管理专家共识》骨肌共病",
+      "tags": [
+        "骨肌共病"
+      ]
+    },
+    {
+      "rec_id": "CN.OP.2022.VERTEBRAL_IMAGING",
+      "source_id": "CN.OP.2022",
+      "topic": "screening",
+      "question": "q.screen.vertebral_imaging",
+      "action": "vertebral_fracture_assessment",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "身高较年轻时下降 >4 cm、一年内下降 >2 cm、出现驼背或不明原因背痛者，应行胸腰椎侧位 X 线片或 VFA 查找无症状椎体骨折。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "height_loss_cm",
+            "op": ">=",
+            "value": 4
+          },
+          {
+            "fact": "age",
+            "op": ">=",
+            "value": 70
+          },
+          {
+            "fact": "glucocorticoid_current",
+            "op": "is_true"
+          }
+        ]
+      },
+      "excluded_when": {
+        "fact": "vertebral_imaging_done",
+        "op": "is_true"
+      },
+      "rationale": "约三分之二的椎体骨折无症状，靠「痛不痛」筛不出来，而一处椎体骨折就改变风险分层与用药选择。",
+      "citation": "《原发性骨质疏松症诊疗指南（2022）》椎体骨折评估",
+      "tags": [
+        "筛查",
+        "椎体骨折",
+        "VFA"
+      ]
+    }
+  ]
+}

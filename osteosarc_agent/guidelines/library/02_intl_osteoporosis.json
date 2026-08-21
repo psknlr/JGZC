@@ -1,0 +1,248 @@
+{
+  "_readme": "国际骨质疏松指南的可计算改写（编辑性转述，非授权原文）。",
+  "sources": [
+    {
+      "source_id": "US.ES.2020",
+      "title_zh": "绝经后骨质疏松症药物治疗指南",
+      "title_en": "Pharmacological Management of Osteoporosis in Postmenopausal Women",
+      "issuer": "Endocrine Society",
+      "year": 2020,
+      "region": "US",
+      "tradition": "western"
+    },
+    {
+      "source_id": "US.AACE.2020",
+      "title_zh": "绝经后骨质疏松症诊断与治疗临床实践指南",
+      "title_en": "AACE/ACE Clinical Practice Guideline for Postmenopausal Osteoporosis",
+      "issuer": "American Association of Clinical Endocrinology",
+      "year": 2020,
+      "region": "US",
+      "tradition": "western"
+    },
+    {
+      "source_id": "US.ACP.2023",
+      "title_zh": "原发性骨质疏松症药物治疗指南",
+      "title_en": "Pharmacologic Treatment of Primary Osteoporosis or Low Bone Mass",
+      "issuer": "American College of Physicians",
+      "year": 2023,
+      "region": "US",
+      "tradition": "western",
+      "note": "内科视角，以双膦酸盐为通用一线，对促骨形成药物更保守"
+    },
+    {
+      "source_id": "US.BHOF.2022",
+      "title_zh": "骨骼健康与骨质疏松临床医师指南",
+      "title_en": "BHOF Clinician's Guide to Prevention and Treatment of Osteoporosis",
+      "issuer": "Bone Health & Osteoporosis Foundation",
+      "year": 2022,
+      "region": "US",
+      "tradition": "western"
+    },
+    {
+      "source_id": "EU.ESCEO.2019",
+      "title_zh": "绝经后骨质疏松症诊断与管理欧洲指南",
+      "title_en": "European guidance for the diagnosis and management of osteoporosis in postmenopausal women",
+      "issuer": "ESCEO / IOF",
+      "year": 2019,
+      "region": "EU",
+      "tradition": "western"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "US.ES.2020.ANABOLIC_FIRST_VHR",
+      "source_id": "US.ES.2020",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_very_high_risk",
+      "action": "start_anabolic_first",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "中等质量证据",
+      "statement_zh": "极高骨折风险的绝经后女性（如已发生椎体骨折、多发骨折、T 值极低）建议以促骨形成药物（特立帕肽/阿巴洛肽）或罗莫索单抗起始，疗程结束后序贯抗骨吸收药物。",
+      "applies_when": {"all": [
+        {"fact": "postmenopausal", "op": "is_true"},
+        {"fact": "very_high_fracture_risk", "op": "is_true"}
+      ]},
+      "rationale": "极高风险人群中，先促骨形成再抗骨吸收比反向序贯获得更大的骨密度与抗骨折获益。",
+      "citation": "Endocrine Society 2020 更新，极高风险人群治疗",
+      "tags": ["药物", "促骨形成", "极高风险"]
+    },
+    {
+      "rec_id": "US.AACE.2020.VHR_DEFINITION",
+      "source_id": "US.AACE.2020",
+      "topic": "diagnosis",
+      "question": "q.risk.very_high_risk_definition",
+      "action": "classify_very_high_fracture_risk",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "符合下列任一项即划为极高骨折风险：近 12 个月内脆性骨折、规范治疗中仍发生骨折、多发脆性骨折、T 值 ≤ -3.0、高跌倒风险或跌倒致伤史、极高 FRAX 值。",
+      "applies_when": {"fact": "dx_osteoporosis", "op": "is_true"},
+      "rationale": "把\"是否骨质疏松\"升级为\"多高的风险\"，是决定用哪一类药的分水岭。",
+      "citation": "AACE/ACE 2020，风险分层",
+      "tags": ["风险分层"]
+    },
+    {
+      "rec_id": "US.AACE.2020.ANABOLIC_VHR",
+      "source_id": "US.AACE.2020",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_very_high_risk",
+      "action": "start_anabolic_first",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "极高骨折风险者初始治疗优先考虑阿巴洛肽、地舒单抗、罗莫索单抗、特立帕肽或唑来膦酸，其中促骨形成药物用于风险最高者。",
+      "applies_when": {"fact": "very_high_fracture_risk", "op": "is_true"},
+      "citation": "AACE/ACE 2020，极高风险初始治疗",
+      "tags": ["药物", "极高风险"]
+    },
+    {
+      "rec_id": "US.ACP.2023.BISPHOSPHONATE_FIRST_LINE",
+      "source_id": "US.ACP.2023",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_very_high_risk",
+      "action": "start_bisphosphonate",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "高质量证据",
+      "statement_zh": "对原发性骨质疏松的绝经后女性，建议以双膦酸盐作为初始药物治疗；促骨形成药物仅在骨折风险极高时作为二线考虑，且必须序贯抗骨吸收治疗。",
+      "applies_when": {"all": [
+        {"fact": "postmenopausal", "op": "is_true"},
+        {"fact": "dx_osteoporosis", "op": "is_true"}
+      ]},
+      "excluded_when": {"fact": "egfr", "op": "<", "value": 35},
+      "rationale": "以净获益、成本与长期安全数据为权重，内科视角更倾向于把双膦酸盐放在所有人的第一步。",
+      "citation": "ACP 2023，一线药物选择",
+      "tags": ["药物", "双膦酸盐", "争议"]
+    },
+    {
+      "rec_id": "US.ACP.2023.ROMOSOZUMAB_CAUTION",
+      "source_id": "US.ACP.2023",
+      "topic": "medication_safety",
+      "question": "q.pharm.romosozumab_cv",
+      "action": "avoid_romosozumab_cv_risk",
+      "direction": "avoid",
+      "strength": "conditional",
+      "statement_zh": "合并心血管疾病或心血管风险较高者不建议使用罗莫索单抗；近 1 年内心肌梗死或脑卒中者禁用。",
+      "applies_when": {"any": [
+        {"fact": "recent_cv_event_12m", "op": "is_true"},
+        {"fact": "age", "op": ">=", "value": 75}
+      ]},
+      "rationale": "关键试验中出现心血管事件不平衡，说明书带黑框警示。",
+      "citation": "ACP 2023 / 罗莫索单抗说明书安全性",
+      "tags": ["安全", "罗莫索单抗", "心血管"]
+    },
+    {
+      "rec_id": "US.BHOF.2022.DIET_CALCIUM_FIRST",
+      "source_id": "US.BHOF.2022",
+      "topic": "nutrition",
+      "question": "q.bone.calcium_supplement_dose",
+      "action": "prefer_dietary_calcium",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "钙优先来自膳食，仅在膳食摄入不足时补足差额；不建议为追求高摄入而大剂量补钙。总摄入建议控制在 1000～1200 mg/d。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 50},
+      "rationale": "超量补钙未见额外抗骨折获益，且与肾结石、胃肠道不适相关。",
+      "citation": "BHOF 2022 临床医师指南，钙与维生素 D",
+      "tags": ["营养", "钙"]
+    },
+    {
+      "rec_id": "US.BHOF.2022.VITD_TARGET",
+      "source_id": "US.BHOF.2022",
+      "topic": "nutrition",
+      "question": "q.bone.vitamin_d_dose",
+      "action": "vitamin_d_supplementation",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "50 岁以上建议维生素 D 800～1000 IU/d，使 25-OH-D 达到并维持在 30 ng/mL 以上；不建议使用大剂量间断冲击给药。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 50},
+      "excluded_when": {"fact": "vitamin_d_25oh", "op": ">=", "value": 50},
+      "rationale": "大剂量年度或月度冲击给药在随机试验中反而增加跌倒与骨折。",
+      "citation": "BHOF 2022 临床医师指南，维生素 D",
+      "tags": ["营养", "维生素D", "剂量"]
+    },
+    {
+      "rec_id": "EU.ESCEO.2019.SEQUENTIAL",
+      "source_id": "EU.ESCEO.2019",
+      "topic": "bone_protection",
+      "question": "q.pharm.initial_agent_very_high_risk",
+      "action": "start_anabolic_first",
+      "direction": "consider",
+      "strength": "conditional",
+      "statement_zh": "对骨折风险极高者，可考虑促骨形成药物起始并序贯抗骨吸收药物；用药选择需结合可及性、给药途径与患者偏好。",
+      "applies_when": {"fact": "very_high_fracture_risk", "op": "is_true"},
+      "citation": "ESCEO/IOF 2019，治疗策略与序贯",
+      "tags": ["药物", "序贯", "欧洲"]
+    },
+    {
+      "rec_id": "EU.ESCEO.2019.TREAT_TO_TARGET",
+      "source_id": "EU.ESCEO.2019",
+      "topic": "monitoring",
+      "question": "q.monitor.dxa_interval",
+      "action": "repeat_dxa",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "治疗反应评估建议在治疗后 1～2 年复查骨密度，并结合骨转换标志物；未达目标（如 T 值仍 ≤ -2.5 或治疗中再骨折）应重新评估方案。",
+      "applies_when": {"fact": "dx_osteoporosis", "op": "is_true"},
+      "citation": "ESCEO/IOF 2019，疗效监测与治疗目标",
+      "tags": ["随访", "治疗目标"]
+    },
+    {
+      "rec_id": "EU.ESCEO.2019.BISPHOSPHONATE_RENAL",
+      "source_id": "EU.ESCEO.2019",
+      "topic": "medication_safety",
+      "question": "q.pharm.ckd_agent_choice",
+      "action": "avoid_bisphosphonate_in_low_egfr",
+      "direction": "avoid",
+      "strength": "strong",
+      "statement_zh": "肌酐清除率低于 30～35 mL/min 者不应使用双膦酸盐；此类患者的抗骨质疏松治疗需在排除肾性骨营养不良后个体化选择。",
+      "applies_when": {"fact": "egfr", "op": "<", "value": 35},
+      "rationale": "低 eGFR 时还必须先鉴别 CKD-MBD，否则可能把肾性骨病当作原发骨质疏松处理。",
+      "citation": "ESCEO/IOF 2019，特殊人群",
+      "tags": ["安全", "肾功能"]
+    },
+    {
+      "rec_id": "US.ES.2020.DENTAL_BEFORE_ANTIRESORPTIVE",
+      "source_id": "US.ES.2020",
+      "topic": "medication_safety",
+      "question": "q.safety.dental_before_antiresorptive",
+      "action": "dental_evaluation_before_antiresorptive",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "拟长期使用抗骨吸收药物者，用药前完成口腔评估并处理需拔牙的病灶，用药期间保持口腔卫生，以降低颌骨坏死风险。",
+      "applies_when": {"any": [
+        {"fact": "dental_extraction_pending", "op": "is_true"},
+        {"fact": "dx_osteoporosis", "op": "is_true"}
+      ]},
+      "citation": "Endocrine Society 2020，不良反应与预防",
+      "tags": ["安全", "颌骨坏死", "口腔"]
+    },
+    {
+      "rec_id": "US.ES.2020.TERIPARATIDE_LIMITS",
+      "source_id": "US.ES.2020",
+      "topic": "medication_safety",
+      "question": "q.pharm.teriparatide_limits",
+      "action": "check_teriparatide_contraindications",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "使用特立帕肽前须排除骨骼放疗史、骨恶性肿瘤或骨转移、高钙血症与不明原因碱性磷酸酶升高，且有疗程上限。",
+      "applies_when": {"any": [
+        {"fact": "medication_classes", "op": "contains", "value": "teriparatide"},
+        {"fact": "very_high_fracture_risk", "op": "is_true"}
+      ]},
+      "citation": "Endocrine Society 2020，促骨形成药物",
+      "tags": ["安全", "特立帕肽"]
+    },
+    {
+      "rec_id": "US.ES.2020.ORAL_BP_ADMIN",
+      "source_id": "US.ES.2020",
+      "topic": "medication_safety",
+      "question": "q.safety.oral_bisphosphonate_administration",
+      "action": "oral_bisphosphonate_administration_rules",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "口服双膦酸盐须晨起空腹、200 mL 以上白水送服、服后保持直立至少 30 分钟且期间不进食；与钙、铁、镁、铝制剂需间隔给药；活动性食管疾病或不能保持直立者禁用口服剂型。",
+      "applies_when": {"fact": "medication_classes", "op": "contains", "value": "bisphosphonate"},
+      "citation": "Endocrine Society 2020，用药方法",
+      "tags": ["安全", "给药方法", "相互作用"]
+    }
+  ]
+}

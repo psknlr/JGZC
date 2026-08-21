@@ -1,0 +1,299 @@
+{
+  "_readme": "临床问题目录。exclusive=true 表示该问题下的各项正向建议是互斥的备选方案（不同答案即分歧）；false 表示它们互补（可同时成立）。冲突消解 Agent 依赖这一标注区分「真分歧」与「多条互补建议」。",
+  "questions": [
+    {
+      "question_id": "q.dx.osteoporosis_criteria",
+      "label_zh": "骨质疏松症如何确立诊断",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.dx.dxa_interpretation",
+      "label_zh": "DXA 结果如何判读与取值",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.dx.osteosarcopenia",
+      "label_zh": "骨肌共病是否单独识别",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.dx.exclude_secondary",
+      "label_zh": "治疗前需排除哪些继发因素",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.screen.dxa_age",
+      "label_zh": "从多大年龄开始筛查骨密度",
+      "exclusive": true
+    },
+    {
+      "question_id": "q.risk.very_high_risk_definition",
+      "label_zh": "如何界定极高骨折风险",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.initial_agent_high_risk",
+      "label_zh": "骨质疏松确诊后是否及以何药启动治疗",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.initial_agent_very_high_risk",
+      "label_zh": "极高骨折风险者的初始药物选择：促骨形成起始还是双膦酸盐一线",
+      "exclusive": true,
+      "note": "国际上真实存在的分歧：内分泌学会与 AACE 主张极高风险者促骨形成起始，ACP 主张双膦酸盐通用一线。"
+    },
+    {
+      "question_id": "q.pharm.ckd_agent_choice",
+      "label_zh": "肾功能不全时的抗骨质疏松药物选择",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.denosumab_discontinuation",
+      "label_zh": "地舒单抗停药如何衔接",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.sequence_after_anabolic",
+      "label_zh": "促骨形成药物疗程结束后如何序贯",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.romosozumab_cv",
+      "label_zh": "罗莫索单抗的心血管限制",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.teriparatide_limits",
+      "label_zh": "特立帕肽的使用限制",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.duration_and_holiday",
+      "label_zh": "抗骨吸收治疗的疗程与药物假期",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.gc_induced_threshold",
+      "label_zh": "糖皮质激素性骨质疏松的干预阈值",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.start_criteria_bone",
+      "label_zh": "哪些情况属于抗骨质疏松处方遗漏",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.ppi_long_term",
+      "label_zh": "长期质子泵抑制剂是否继续",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.pharm.polypharmacy_review",
+      "label_zh": "多重用药如何重整",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.bone.calcium_vitd_baseline",
+      "label_zh": "钙与维生素 D 的基础补充",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.bone.calcium_supplement_dose",
+      "label_zh": "钙的来源与补充量",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.bone.vitamin_d_dose",
+      "label_zh": "维生素 D 的补充方式与剂量形态",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.safety.correct_calcium_vitd_first",
+      "label_zh": "抗骨吸收治疗前是否必须先纠正钙与维生素 D",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.safety.dental_before_antiresorptive",
+      "label_zh": "用药前的口腔评估",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.safety.oral_bisphosphonate_administration",
+      "label_zh": "口服双膦酸盐的给药方法",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.safety.denosumab_hypocalcemia",
+      "label_zh": "地舒单抗的低钙血症防范",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.safety.onj_aff",
+      "label_zh": "颌骨坏死与非典型股骨骨折的告知",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.safety.calcium_interactions",
+      "label_zh": "钙剂的药物相互作用",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.sarco.diagnosis_criteria",
+      "label_zh": "肌少症采用哪套诊断标准与切点",
+      "exclusive": true,
+      "note": "AWGS 2019、EWGSOP2 与 GLIS 2024 对切点与判定顺序的规定不同，同一患者可得出不同结论。"
+    },
+    {
+      "question_id": "q.sarco.mass_required",
+      "label_zh": "没有肌量测定能否诊断并开始干预",
+      "exclusive": true,
+      "note": "GLIS 把肌量列为必备核心要素；AWGS 与 EWGSOP2 都允许在肌量缺失时先按「可能肌少症」干预。"
+    },
+    {
+      "question_id": "q.sarco.case_finding",
+      "label_zh": "肌少症的病例发现方式",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.sarco.core_intervention",
+      "label_zh": "肌少症的核心干预",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.sarco.pharmacotherapy",
+      "label_zh": "肌少症是否需要药物治疗",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.sarco.reversible_causes",
+      "label_zh": "肌少症的可逆病因筛查",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.nutrition.screening",
+      "label_zh": "营养不良的筛查",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.nutrition.energy_target",
+      "label_zh": "能量摄入目标",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.nutrition.protein_target",
+      "label_zh": "每日蛋白质摄入目标",
+      "exclusive": true,
+      "note": "肌少症营养建议与非透析 CKD 的蛋白限制方向相反，是本平台最常触发的真实分歧。"
+    },
+    {
+      "question_id": "q.nutrition.protein_ckd_sarcopenia",
+      "label_zh": "CKD 合并肌少症时蛋白目标由谁决定",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.nutrition.protein_distribution",
+      "label_zh": "蛋白质如何分配到三餐",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.nutrition.oral_supplement",
+      "label_zh": "何时给予口服营养补充",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.falls.stratification",
+      "label_zh": "跌倒风险如何评估与分层",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.falls.multifactorial_intervention",
+      "label_zh": "高跌倒风险者的干预方式",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.falls.frid_deprescribing",
+      "label_zh": "增加跌倒风险的药物如何处理",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.falls.home_environment",
+      "label_zh": "居家环境如何改造",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.older_adult_prescription",
+      "label_zh": "老年人运动处方的总量与结构",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.fall_prevention",
+      "label_zh": "以预防跌倒为目标的运动形式",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.resistance_dose",
+      "label_zh": "抗阻训练的频次与强度",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.vertebral_fracture_precautions",
+      "label_zh": "有椎体骨折者的运动禁忌与改良",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.posture_program",
+      "label_zh": "姿势与背伸肌训练",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.impact_loading",
+      "label_zh": "是否进行冲击性负荷训练",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.frail_starting_point",
+      "label_zh": "达不到推荐运动量时如何起步",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.exercise.supervision",
+      "label_zh": "运动方案是否需要监督起始",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.tcm.pattern_treatment",
+      "label_zh": "中医辨证论治的治法方向",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.tcm.role_vs_western_drug",
+      "label_zh": "中医药与抗骨质疏松药物的关系",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.tcm.pain_management",
+      "label_zh": "中医药在骨痛管理中的作用",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.tcm.safety_monitoring",
+      "label_zh": "中成药的安全监测",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.monitor.dxa_interval",
+      "label_zh": "骨密度复查间隔",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.geri.comprehensive_assessment",
+      "label_zh": "老年患者是否需要综合评估",
+      "exclusive": false
+    },
+    {
+      "question_id": "q.screen.vertebral_imaging",
+      "label_zh": "是否加做椎体骨折影像评估",
+      "exclusive": false
+    }
+  ]
+}

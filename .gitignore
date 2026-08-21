@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+
+# 病例数据永远不进版本库
+cases/*.json
+!osteosarc_agent/cases.py
+*.xlsx
+*.xls
+*.csv
+
+# 获授权的指南语料属于第三方内容，按机构自身授权保存，不得提交回本仓库
+authorized/
+licensed-corpus/
+*.db
+*.sqlite3

@@ -1,0 +1,199 @@
+{
+  "_readme": "抗骨质疏松药物的说明书级安全约束（编辑性转述，不含任何剂量处方）。",
+  "sources": [
+    {
+      "source_id": "INTL.LABEL.SAFETY",
+      "title_zh": "抗骨质疏松药物说明书安全性要点汇编",
+      "issuer": "监管机构说明书与安全性通报（汇编）",
+      "year": 2024,
+      "region": "INTL",
+      "tradition": "pharmacy",
+      "note": "汇编条目；落地时必须以本机构在用说明书版本替换并记录检索时间"
+    },
+    {
+      "source_id": "CN.GIOP.2021",
+      "title_zh": "糖皮质激素性骨质疏松症防治专家共识",
+      "issuer": "中华医学会风湿病学分会",
+      "year": 2021,
+      "region": "CN",
+      "tradition": "western"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "LABEL.DENOSUMAB_HYPOCALCEMIA_CKD",
+      "source_id": "INTL.LABEL.SAFETY",
+      "topic": "medication_safety",
+      "question": "q.safety.denosumab_hypocalcemia",
+      "action": "monitor_calcium_intensively_on_denosumab_ckd",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "晚期慢性肾病患者使用地舒单抗发生严重症状性低钙血症的风险显著升高（说明书带警示）：用药前必须纠正低钙与维生素 D 缺乏，用药后早期（如 1～2 周、1 个月）复查血钙，并告知患者手足抽搐、口周麻木等症状需立即就诊。",
+      "applies_when": {
+        "all": [
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 35
+          },
+          {
+            "any": [
+              {
+                "fact": "medication_classes",
+                "op": "contains",
+                "value": "denosumab"
+              },
+              {
+                "fact": "dx_osteoporosis",
+                "op": "is_true"
+              }
+            ]
+          }
+        ]
+      },
+      "rationale": "这是本平台把\"药物可用\"与\"药物可安全使用\"分开的典型例子：肾功能不全解锁了地舒单抗，同时把风险移到了血钙。",
+      "citation": "地舒单抗说明书安全性警示",
+      "tags": [
+        "安全",
+        "地舒单抗",
+        "低钙",
+        "CKD"
+      ]
+    },
+    {
+      "rec_id": "LABEL.ONJ_AFF",
+      "source_id": "INTL.LABEL.SAFETY",
+      "topic": "medication_safety",
+      "question": "q.safety.onj_aff",
+      "action": "counsel_onj_and_atypical_fracture",
+      "direction": "require",
+      "strength": "consensus",
+      "statement_zh": "长期使用抗骨吸收药物者需告知颌骨坏死与非典型股骨骨折风险：出现新发大腿或腹股沟钝痛应及时就诊排查非典型骨折；侵入性口腔操作前后需与口腔科沟通。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "medication_classes",
+            "op": "any_in",
+            "value": [
+              "bisphosphonate",
+              "denosumab"
+            ]
+          },
+          {
+            "fact": "dx_osteoporosis",
+            "op": "is_true"
+          }
+        ]
+      },
+      "citation": "双膦酸盐与地舒单抗说明书不良反应",
+      "tags": [
+        "安全",
+        "颌骨坏死",
+        "非典型骨折"
+      ]
+    },
+    {
+      "rec_id": "LABEL.CALCIUM_CHELATION",
+      "source_id": "INTL.LABEL.SAFETY",
+      "topic": "medication_safety",
+      "question": "q.safety.calcium_interactions",
+      "action": "separate_calcium_from_interacting_drugs",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "钙剂与左甲状腺素、喹诺酮类及四环素类抗生素、口服双膦酸盐、铁剂之间存在螯合性吸收干扰，必须分开服用（一般间隔 2～4 小时以上）。",
+      "applies_when": {
+        "fact": "medication_classes",
+        "op": "contains",
+        "value": "calcium"
+      },
+      "citation": "钙剂说明书药物相互作用",
+      "tags": [
+        "安全",
+        "相互作用",
+        "钙"
+      ]
+    },
+    {
+      "rec_id": "LABEL.DRUG_HOLIDAY",
+      "source_id": "INTL.LABEL.SAFETY",
+      "topic": "bone_protection",
+      "question": "q.pharm.duration_and_holiday",
+      "action": "reassess_duration_and_holiday",
+      "direction": "recommend",
+      "strength": "conditional",
+      "statement_zh": "口服双膦酸盐使用 5 年、静脉双膦酸盐使用 3 年后应重新评估风险：低风险者可考虑药物假期，高或极高风险者继续治疗。药物假期不适用于地舒单抗。",
+      "applies_when": {
+        "fact": "medication_classes",
+        "op": "contains",
+        "value": "bisphosphonate"
+      },
+      "citation": "双膦酸盐疗程与药物假期",
+      "tags": [
+        "疗程",
+        "药物假期"
+      ]
+    },
+    {
+      "rec_id": "CN.GIOP.2021.LOWER_THRESHOLD",
+      "source_id": "CN.GIOP.2021",
+      "topic": "bone_protection",
+      "question": "q.pharm.gc_induced_threshold",
+      "action": "treat_gc_op_at_lower_threshold",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "拟长期（≥3 个月）使用糖皮质激素者应按更低的干预阈值处理：不能沿用一般人群的 T ≤ -2.5，中高风险者在开始激素治疗的同时即启动抗骨质疏松药物与钙、维生素 D。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "glucocorticoid_current",
+            "op": "is_true"
+          },
+          {
+            "fact": "glucocorticoid_months",
+            "op": ">=",
+            "value": 3
+          }
+        ]
+      },
+      "rationale": "激素性骨质疏松的骨折发生在骨密度下降之前，等 T 值达标再治就晚了。",
+      "citation": "《糖皮质激素性骨质疏松症防治专家共识》干预阈值",
+      "tags": [
+        "激素性骨质疏松",
+        "阈值"
+      ]
+    },
+    {
+      "rec_id": "LABEL.EXCLUDE_SECONDARY",
+      "source_id": "INTL.LABEL.SAFETY",
+      "topic": "diagnosis",
+      "question": "q.dx.exclude_secondary",
+      "action": "exclude_secondary_osteoporosis",
+      "direction": "require",
+      "strength": "strong",
+      "statement_zh": "启动治疗前需排除继发因素：甲状旁腺功能亢进、甲状腺功能亢进、多发性骨髓瘤（骨痛+贫血+肾损时尤需警惕）、骨软化、慢性肾病矿物质骨代谢异常（CKD-MBD）与恶性肿瘤骨转移。",
+      "applies_when": {
+        "any": [
+          {
+            "fact": "dx_osteoporosis",
+            "op": "is_true"
+          },
+          {
+            "fact": "egfr",
+            "op": "<",
+            "value": 45
+          },
+          {
+            "fact": "secondary_osteoporosis",
+            "op": "is_true"
+          }
+        ]
+      },
+      "rationale": "把肾性骨病或骨髓瘤当作原发骨质疏松治疗，既无效又延误。",
+      "citation": "继发性骨质疏松鉴别",
+      "tags": [
+        "鉴别诊断",
+        "继发"
+      ]
+    }
+  ]
+}

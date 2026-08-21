@@ -1,0 +1,173 @@
+{
+  "_readme": "老年运动与骨科康复语料（编辑性转述）。",
+  "sources": [
+    {
+      "source_id": "INTL.WHO.PA.2020",
+      "title_zh": "世界卫生组织身体活动与久坐行为指南（老年人部分）",
+      "title_en": "WHO Guidelines on Physical Activity and Sedentary Behaviour",
+      "issuer": "World Health Organization",
+      "year": 2020,
+      "region": "INTL",
+      "tradition": "rehab"
+    },
+    {
+      "source_id": "EU.ROS.2018",
+      "title_zh": "骨质疏松与椎体骨折者的运动建议（强壮·稳定·挺直）",
+      "title_en": "Strong, Steady and Straight: exercise and physical activity for osteoporosis",
+      "issuer": "Royal Osteoporosis Society",
+      "year": 2018,
+      "region": "EU",
+      "tradition": "rehab"
+    },
+    {
+      "source_id": "US.ACSM.2019",
+      "title_zh": "老年人运动测试与运动处方（骨骼健康部分）",
+      "title_en": "ACSM's Guidelines for Exercise Testing and Prescription",
+      "issuer": "American College of Sports Medicine",
+      "year": 2019,
+      "region": "US",
+      "tradition": "rehab"
+    },
+    {
+      "source_id": "CN.REHAB.2023",
+      "title_zh": "老年人运动功能障碍康复专家共识",
+      "issuer": "中国康复医学会",
+      "year": 2023,
+      "region": "CN",
+      "tradition": "rehab"
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "INTL.WHO.PA.2020.MULTICOMPONENT",
+      "source_id": "INTL.WHO.PA.2020",
+      "topic": "exercise",
+      "question": "q.exercise.older_adult_prescription",
+      "action": "multicomponent_exercise",
+      "direction": "recommend",
+      "strength": "strong",
+      "evidence_level": "强推荐",
+      "statement_zh": "65 岁以上应每周进行 150～300 分钟中等强度有氧活动，每周至少 2 天大肌群抗阻训练；功能受限者每周至少 3 天进行侧重平衡与力量的多成分运动以预防跌倒。",
+      "applies_when": {"fact": "age", "op": ">=", "value": 65},
+      "citation": "WHO 2020 身体活动指南，老年人",
+      "tags": ["运动", "多成分"]
+    },
+    {
+      "rec_id": "INTL.WHO.PA.2020.SOME_IS_BETTER",
+      "source_id": "INTL.WHO.PA.2020",
+      "topic": "exercise",
+      "question": "q.exercise.frail_starting_point",
+      "action": "start_below_target_and_progress",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "无法达到推荐量的老年人应在能力范围内尽量活动并逐步增加——做一些总比不做好；久坐时间应尽量减少并以任何强度的活动替代。",
+      "applies_when": {"any": [
+        {"fact": "functional_risk_tier", "op": "in", "value": ["high", "very_high"]},
+        {"fact": "sedentary_hours", "op": ">=", "value": 8},
+        {"fact": "iadl_dependent", "op": "is_true"}
+      ]},
+      "citation": "WHO 2020 身体活动指南，功能受限人群",
+      "tags": ["运动", "起点", "衰弱"]
+    },
+    {
+      "rec_id": "EU.ROS.2018.EXERCISE_AFTER_VF",
+      "source_id": "EU.ROS.2018",
+      "topic": "exercise",
+      "question": "q.exercise.vertebral_fracture_precautions",
+      "action": "exercise_with_spinal_precautions",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "有椎体骨折者仍应进行力量与平衡训练，但需避免负重下的重复性脊柱前屈、躯干旋转下的提举与仰卧起坐类动作，改以中立位核心稳定、背伸肌训练与渐进抗阻为主。",
+      "applies_when": {"any": [
+        {"fact": "fracture_sites", "op": "any_in", "value": ["vertebra", "椎体"]},
+        {"fact": "morphometric_vertebral_fracture", "op": "is_true"}
+      ]},
+      "rationale": "\"有椎体骨折就别练了\"造成的失用与再骨折风险，大于经过改良的训练本身。",
+      "citation": "Royal Osteoporosis Society 2018，椎体骨折后的运动",
+      "tags": ["运动", "椎体骨折", "禁忌动作"]
+    },
+    {
+      "rec_id": "EU.ROS.2018.BACK_EXTENSOR",
+      "source_id": "EU.ROS.2018",
+      "topic": "exercise",
+      "question": "q.exercise.posture_program",
+      "action": "back_extensor_training",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "背伸肌力量训练与姿势训练可减轻胸椎后凸进展、改善平衡并降低椎体再骨折风险，建议纳入常规方案。",
+      "applies_when": {"any": [
+        {"fact": "height_loss_cm", "op": ">=", "value": 3},
+        {"fact": "fracture_sites", "op": "any_in", "value": ["vertebra", "椎体"]},
+        {"fact": "dx_osteoporosis", "op": "is_true"}
+      ]},
+      "citation": "Royal Osteoporosis Society 2018，姿势与背伸肌",
+      "tags": ["运动", "背伸肌", "姿势"]
+    },
+    {
+      "rec_id": "EU.ROS.2018.IMPACT_GRADED",
+      "source_id": "EU.ROS.2018",
+      "topic": "exercise",
+      "question": "q.exercise.impact_loading",
+      "action": "graded_impact_loading",
+      "direction": "consider",
+      "strength": "conditional",
+      "statement_zh": "骨骼需要冲击性负荷刺激；能力允许者可进行低至中等冲击活动（快走、上下台阶、原地踏步），但高冲击训练不适用于近期椎体骨折、严重骨质疏松或平衡障碍者。",
+      "applies_when": {"fact": "dx_osteoporosis", "op": "is_true"},
+      "excluded_when": {"any": [
+        {"fact": "fracture_within_12m", "op": "is_true"},
+        {"fact": "high_fall_risk", "op": "is_true"}
+      ]},
+      "citation": "Royal Osteoporosis Society 2018，冲击性负荷",
+      "tags": ["运动", "冲击负荷", "分级"]
+    },
+    {
+      "rec_id": "US.ACSM.2019.PROGRESSIVE_RESISTANCE",
+      "source_id": "US.ACSM.2019",
+      "topic": "exercise",
+      "question": "q.exercise.resistance_dose",
+      "action": "progressive_resistance_dose",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "抗阻训练建议每周 2～3 次、8～10 个大肌群动作、每组 8～12 次重复、1～3 组，以自觉用力程度中等偏上为度并逐步递增负荷；起始阶段可用弹力带或自重完成。",
+      "applies_when": {"any": [
+        {"fact": "dx_sarcopenia_any", "op": "is_true"},
+        {"fact": "dx_possible_sarcopenia", "op": "is_true"},
+        {"fact": "dx_osteoporosis", "op": "is_true"}
+      ]},
+      "citation": "ACSM 运动处方指南，老年人抗阻训练",
+      "tags": ["运动", "抗阻", "剂量"]
+    },
+    {
+      "rec_id": "CN.REHAB.2023.SUPERVISED_START",
+      "source_id": "CN.REHAB.2023",
+      "topic": "exercise",
+      "question": "q.exercise.supervision",
+      "action": "supervised_initiation",
+      "direction": "recommend",
+      "strength": "consensus",
+      "statement_zh": "高跌倒风险或有骨折史的老年人，运动方案起始阶段应在康复治疗师指导下进行，学会动作模式与安全边界后再转为居家训练，并配合定期复评。",
+      "applies_when": {"any": [
+        {"fact": "high_fall_risk", "op": "is_true"},
+        {"fact": "prior_fragility_fracture", "op": "is_true"}
+      ]},
+      "citation": "《老年人运动功能障碍康复专家共识》实施路径",
+      "tags": ["运动", "监督", "安全"]
+    },
+    {
+      "rec_id": "CN.REHAB.2023.TAICHI",
+      "source_id": "CN.REHAB.2023",
+      "topic": "exercise",
+      "question": "q.exercise.fall_prevention",
+      "action": "balance_and_functional_training",
+      "direction": "recommend",
+      "strength": "strong",
+      "statement_zh": "太极拳、八段锦等传统功法作为平衡与下肢力量训练手段，对老年人跌倒预防有效且依从性好，可作为社区首选形式之一。",
+      "applies_when": {"any": [
+        {"fact": "high_fall_risk", "op": "is_true"},
+        {"fact": "age", "op": ">=", "value": 65}
+      ]},
+      "citation": "《老年人运动功能障碍康复专家共识》传统功法",
+      "tags": ["运动", "太极", "平衡"]
+    }
+  ]
+}
